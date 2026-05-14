@@ -40,7 +40,6 @@ const localStatusId = ref(props.obj.status_id)
 
 const statuses = computed(() => store.statuses)
 
-// All floors from the building, plus any new value
 const availableFloors = computed(() => {
   const existing = store.getBuildingFloors(props.obj.building_id)
   const set = new Set(existing)

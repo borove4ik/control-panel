@@ -64,12 +64,24 @@ export const useDataStore = defineStore('data', () => {
   })
 
   // Update object (floor change etc)
-  function updateObject(id, patch) {
-    const updated = repo.updateObject(id, patch)
-    const idx = objects.value.findIndex(o => o.id === id)
-    if (idx !== -1) objects.value[idx] = { ...objects.value[idx], ...patch }
-    return updated
+ function updateObject(id, patch) {
+  const updated = repo.updateObject(id, patch)
+  const idx = objects.value.findIndex(o => o.id === id)
+  if (idx !== -1) objects.value[idx] = { ...objects.value[idx], ...patch }
+
+  // Синхронизируем статус договора
+  if (patch.status_id !== undefined) {
+    const contractIdx = contracts.value.findIndex(c => c.object_ids.includes(id))
+    if (contractIdx !== -1) {
+      contracts.value[contractIdx] = {
+        ...contracts.value[contractIdx],
+        status_id: patch.status_id,
+      }
+    }
   }
+
+  return updated
+}
 
   // Get enriched client by id
   function getEnrichedClientById(id) {
