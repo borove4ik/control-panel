@@ -4,7 +4,7 @@
 
 # 🚀Технологии
 
-[![My Skills](https://skillicons.dev/icons?i=vue,vite,pinia,bootstrap)](https://skillicons.dev), Vue Router
+[![My Skills](https://skillicons.dev/icons?i=vue,vite,pinia,bootstrap)](https://skillicons.dev)
 
 # ⚙️ Запуск
 
