@@ -3,7 +3,7 @@
     <nav class="app-sidebar d-flex flex-column">
       <div class="sidebar-brand">
         <span class="brand-icon">🏢</span>
-        <span class="brand-name">RentMS</span>
+        <span class="brand-name">Rent System</span>
       </div>
       <ul class="nav-list">
         <li>
